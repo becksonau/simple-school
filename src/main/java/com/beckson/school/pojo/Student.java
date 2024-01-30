@@ -1,8 +1,9 @@
 package com.beckson.school.pojo;
 
+import java.text.DateFormat;
 import java.util.Date;
 
-public class student {
+public class Student {
 
     private Integer id ;
     private String sid;
@@ -12,10 +13,10 @@ public class student {
     private Date createDate;
     private Date updateDate;
 
-    public student() {
+    public Student() {
     }
 
-    public student(Integer id, String sid, String name, String gender, String classroom, Date createDate, Date updateDate) {
+    public Student(Integer id, String sid, String name, String gender, String classroom, Date createDate, Date updateDate) {
         this.id = id;
         this.sid = sid;
         this.name = name;
@@ -25,7 +26,7 @@ public class student {
         this.updateDate = updateDate;
     }
 
-    public student(String sid, String name, String gender, String classroom, Date createDate, Date updateDate) {
+    public Student(String sid, String name, String gender, String classroom, Date createDate, Date updateDate) {
         this.sid = sid;
         this.name = name;
         this.gender = gender;
