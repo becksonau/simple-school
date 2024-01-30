@@ -12,6 +12,7 @@
         <result property="classroom" column="classroom"></result>
         <result property="createDate" column="create_date"></result>
         <result property="updateDate" column="update_date"></result>
+        <result property="status" column="status"></result>
     </resultMap>
 
     <!--List<Student> getAllStudent();-->

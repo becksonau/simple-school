@@ -13,6 +13,8 @@ public class Student {
     private Date createDate;
     private Date updateDate;
 
+    private int status;
+
     public Student() {
     }
 
@@ -33,6 +35,25 @@ public class Student {
         this.classroom = classroom;
         this.createDate = createDate;
         this.updateDate = updateDate;
+    }
+
+    public Student(Integer id, String sid, String name, String gender, String classroom, Date createDate, Date updateDate, int status) {
+        this.id = id;
+        this.sid = sid;
+        this.name = name;
+        this.gender = gender;
+        this.classroom = classroom;
+        this.createDate = createDate;
+        this.updateDate = updateDate;
+        this.status = status;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public Integer getId() {
@@ -93,7 +114,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "student{" +
+        return "Student{" +
                 "id=" + id +
                 ", sid='" + sid + '\'' +
                 ", name='" + name + '\'' +
@@ -101,6 +122,7 @@ public class Student {
                 ", classroom='" + classroom + '\'' +
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
+                ", status=" + status +
                 '}';
     }
 }
