@@ -43,7 +43,6 @@ public class StudentServiceImpl implements StudentService{
             throw new RuntimeException("您輸入的學號已被使用過 - " + theStudent.getSid());
         }
         studentDao.addStudent(theStudent);
-        studentDao.addStudent(theStudent);
 
         return studentDao.getBySid(theStudent.getSid());
     }
