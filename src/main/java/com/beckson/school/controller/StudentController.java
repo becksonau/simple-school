@@ -2,6 +2,7 @@ package com.beckson.school.controller;
 
 import com.beckson.school.pojo.Student;
 import com.beckson.school.service.StudentService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,6 +37,13 @@ public class StudentController {
         return dbStudent;
     }
 
+
+    @DeleteMapping("/students/test/{studentId}")
+    public String deleteTestStudent(@PathVariable String studentId) {
+
+        studentService.deleteTestStudent(studentId);
+        return "已刪除測試資料學號 - " + studentId;
+    };
 
 
 

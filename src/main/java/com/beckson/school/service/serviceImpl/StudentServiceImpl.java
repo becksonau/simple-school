@@ -47,6 +47,23 @@ public class StudentServiceImpl implements StudentService{
         return studentDao.getBySid(theStudent.getSid());
     }
 
+    @Override
+    public void deleteTestStudent(String studentId) {
+
+        System.out.println("sid : " + studentId);
+        System.out.println("status : " + studentDao.getBySid(studentId).getStatus());
+        Student tempStudent = studentDao.getBySid(studentId);
+
+        if(tempStudent== null) {
+            throw new RuntimeException("您輸入的學號無資料 - " + studentId);
+        } else if(tempStudent.getStatus() != 9) {
+            throw new RuntimeException("您輸入的學號無刪除權限 - " + studentId);
+        }
+
+        studentDao.deleteTestStudent(studentId);
+    }
+
+
 //    private static Date switchDateFormatStr(Date date) {
 //
 //        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy/MM/dd");

@@ -17,13 +17,13 @@
 
     <!--List<Student> getAllStudent();-->
     <select id="getAllStudent" resultMap="studentResultMap">
-        select id, sid, name, gender, classroom, create_date, update_date
+        select id, sid, name, gender, classroom, create_date, update_date, status
         from student
     </select>
 
     <!--Student getBySid(int id);-->
     <select id="getBySid" resultMap="studentResultMap">
-        select id, sid, name, gender, classroom, create_date, update_date
+        select id, sid, name, gender, classroom, create_date, update_date, status
         from student
         where sid = #{sid};
     </select>
@@ -34,4 +34,9 @@
         insert into student ( sid, name, gender, classroom, create_date, update_date)
             values (#{sid}, #{name}, #{gender}, #{classroom}, now(), now())
     </insert>
+
+    <!--void deleteTestStudent(int studentId);-->
+    <delete id="deleteTestStudent" >
+        delete from student where sid = #{sid};
+    </delete>
 </mapper>
